@@ -1,0 +1,4 @@
+apply plugin : 'java'
+dependencies{
+implementation files('../netcommon/build/libs/netcommon.jar','../common/dist/hr-common.jar','../netclient/build/libs/netclient.jar');
+}
