@@ -1,0 +1,1 @@
+This repository contains desktop application performing crud operation on Designation and Employee Module
