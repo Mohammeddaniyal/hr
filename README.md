@@ -2,35 +2,44 @@
 
 ## 📋 Project Overview
 
-In this phase, the **HR Management System** evolves by introducing **MySQL database integration**. The data handling previously done through file storage is now migrated to a **relational database** using **JDBC**. The application now allows for persistent storage of designation data within MySQL, ensuring that data is retained across sessions.
+In this phase, the application was enhanced by introducing **custom networking** for client-server communication. Custom Java socket programming was implemented to allow the system to exchange data between the client and server. This step involved the creation of multiple network-related packages, enabling remote interactions with the HR management system.
 
-The architecture has been expanded to include more layers for better separation of concerns and scalability.
+The architecture has been extended to include networking layers and a custom server-client communication mechanism.
 
 ## ✨ Features
 
-- **CRUD Operations** for designations (now backed by MySQL database).
+- **CRUD Operations** for designations backed by MySQL database.
 - **Search** functionality for designations.
 - **Export to PDF** functionality using iText7.
 - **Data Persistence** through MySQL database.
-- Updated **User Interface** reflecting new database-driven operations.
-  
+- **Networking** for client-server communication using custom Java sockets.
+- Server-side handling with custom **HR Server** to manage incoming requests.
+
 ## 🏛️ Project Architecture
 
-The updated architecture introduces the following layers:
+The architecture has been updated to introduce networking layers for communication between the client and server. The updated architecture now includes:
 
 - **Data Layer (DL):**  
-  - Responsible for file storage (for legacy purposes) and interactions with the database.
-  
-- **Business Logic Layer (BL):**  
-  - Manages the business rules and logic for designations.
-  
-- **Presentation Layer (PL):**  
-  - Provides the graphical user interface (GUI) for CRUD operations.
-  
-- **Database Data Layer (DBDL):**  
-  - Handles all MySQL database interactions using **JDBC** to persist designations in a relational database.
+  - Handles file storage and database interactions.
 
-The **MySQL database** now stores the data, replacing the previous file-based approach.
+- **Business Logic Layer (BL):**  
+  - Manages business rules and logic for designations.
+
+- **Presentation Layer (PL):**  
+  - Provides the graphical user interface for CRUD operations.
+
+- **Database Data Layer (DBDL):**  
+  - Handles database interactions through **JDBC**.
+
+- **Networking Layers:**
+  - **NetServer:**  
+    Handles server-side logic and communication with clients.
+  - **NetClient:**  
+    Handles the client-side communication with the server.
+  - **NetCommon:**  
+    Contains shared utilities and protocols for both server and client.
+  - **ProxyBL:**  
+    Acts as a mediator between the client and business logic layer for network communication.
 
 ## 🛠️ Technologies Used
 
@@ -38,14 +47,16 @@ The **MySQL database** now stores the data, replacing the previous file-based ap
 - **iText7** (for PDF export functionality)
 - **MySQL** (for database integration)
 - **JDBC** (for connecting and performing operations on MySQL)
+- **Custom Networking** (Java socket programming)
 - **File Handling** (for legacy support)
 
 ## 🧑‍💻 Development Journey
 
-The main goal of this phase was to transition from **file storage** to a more robust **MySQL database** system. This was achieved through **JDBC** integration, allowing for data persistence across sessions. The design of the application was also updated to introduce the **DBDL** layer for database interaction, which improves scalability and performance.
+The focus of this phase was to implement **client-server communication** using **custom Java socket programming**. This was done to enable remote interactions with the HR Management System. By implementing networking from scratch, the system can now accept requests from remote clients and process them on the server side. The **HR Server** now manages incoming client requests, forwarding the necessary operations to the relevant business logic layers.
 
-With the database now integrated, the application can handle larger datasets more efficiently and persist data across restarts.
+Additionally, a **ProxyBL** layer was introduced to mediate communication between the client and the business logic, ensuring smooth data handling across the network.
 
 ## 🚀 Next Steps
 
-The next steps involve enhancing the application with **networking features** to allow client-server communication, enabling the application to handle requests from remote clients. Additionally, work will begin on adding more modules, including the Employee Management feature.
+The next steps include refining the server-client interaction, improving error handling, and enhancing the user interface. Future updates will also include adding employee management features and optimizing the overall system performance.
+
