@@ -2,44 +2,44 @@
 
 ## 📋 Project Overview
 
-In this phase, the application was enhanced by introducing **custom networking** for client-server communication. Custom Java socket programming was implemented to allow the system to exchange data between the client and server. This step involved the creation of multiple network-related packages, enabling remote interactions with the HR management system.
+In this phase, the HR Management System underwent major improvements in functionality and structure. The main focus was on finalizing the **Employee Management Module**, where users can manage employee details such as ID, name, designation, gender, PAN, and other personal information. The system now also supports handling and storing employee-related data in the MySQL database.
 
-The architecture has been extended to include networking layers and a custom server-client communication mechanism.
+With this enhancement, the application is now capable of handling both **designation** and **employee** data through the database and provides a more complete HR management system.
 
 ## ✨ Features
 
-- **CRUD Operations** for designations backed by MySQL database.
-- **Search** functionality for designations.
-- **Export to PDF** functionality using iText7.
+- **CRUD Operations** for both designations and employees.
+- **Search** functionality for both designations and employees.
+- **Export to PDF** functionality for employee and designation data using iText7.
 - **Data Persistence** through MySQL database.
-- **Networking** for client-server communication using custom Java sockets.
-- Server-side handling with custom **HR Server** to manage incoming requests.
+- **Employee Management Module** added with fields like:
+  - ID
+  - Name
+  - Designation
+  - Date of Birth
+  - Basic Salary
+  - Gender
+  - PAN
+  - Aadhar
 
 ## 🏛️ Project Architecture
 
-The architecture has been updated to introduce networking layers for communication between the client and server. The updated architecture now includes:
+The architecture has been further expanded to accommodate the new **Employee Management Module**. The updated architecture now includes:
 
 - **Data Layer (DL):**  
-  - Handles file storage and database interactions.
+  - Handles database interactions for both designations and employee data.
 
 - **Business Logic Layer (BL):**  
-  - Manages business rules and logic for designations.
+  - Manages business rules and logic for employee and designation management.
 
 - **Presentation Layer (PL):**  
-  - Provides the graphical user interface for CRUD operations.
+  - Provides the graphical user interface for CRUD operations on both designations and employees.
 
 - **Database Data Layer (DBDL):**  
-  - Handles database interactions through **JDBC**.
+  - Handles all database interactions using **JDBC** for designations and employee data.
 
-- **Networking Layers:**
-  - **NetServer:**  
-    Handles server-side logic and communication with clients.
-  - **NetClient:**  
-    Handles the client-side communication with the server.
-  - **NetCommon:**  
-    Contains shared utilities and protocols for both server and client.
-  - **ProxyBL:**  
-    Acts as a mediator between the client and business logic layer for network communication.
+- **Networking Layers:**  
+  - **NetServer, NetClient, NetCommon, ProxyBL** remain the same, facilitating network communication for CRUD operations over the client-server setup.
 
 ## 🛠️ Technologies Used
 
@@ -52,11 +52,13 @@ The architecture has been updated to introduce networking layers for communicati
 
 ## 🧑‍💻 Development Journey
 
-The focus of this phase was to implement **client-server communication** using **custom Java socket programming**. This was done to enable remote interactions with the HR Management System. By implementing networking from scratch, the system can now accept requests from remote clients and process them on the server side. The **HR Server** now manages incoming client requests, forwarding the necessary operations to the relevant business logic layers.
+In this phase, the application was enhanced by implementing the **Employee Management Module**, which included adding employee data fields such as name, designation, gender, and salary. The data is now stored in the **MySQL database**.
 
-Additionally, a **ProxyBL** layer was introduced to mediate communication between the client and the business logic, ensuring smooth data handling across the network.
+The **Employee CRUD Operations** were added, enabling users to create, read, update, and delete employee records within the application. Additionally, the **GUI** was updated to accommodate employee management, with new forms and tables to display employee data.
+
+The **Database Data Layer (DBDL)** was extended to include employee data management, and the **Business Logic Layer (BL)** was updated to include the logic for handling employee-specific operations.
 
 ## 🚀 Next Steps
 
-The next steps include refining the server-client interaction, improving error handling, and enhancing the user interface. Future updates will also include adding employee management features and optimizing the overall system performance.
+The next phase will focus on refining the **user interface** and improving the **client-server interaction** to handle more complex operations. We will also work on improving the performance of the system and adding features such as **employee attendance management** and **salary management**.
 
