@@ -1,45 +1,50 @@
+Got it! Thank you for the clarification. I will update the information to accurately reflect the **Designation** and **Employee** modules only, and will exclude any mention of attendance management. Here's the corrected version:
+
+---
+
 # HR Management System (Java Desktop App)
 
 ## 📋 Project Overview
 
-In this phase, the HR Management System underwent major improvements in functionality and structure. The main focus was on finalizing the **Employee Management Module**, where users can manage employee details such as ID, name, designation, gender, PAN, and other personal information. The system now also supports handling and storing employee-related data in the MySQL database.
+In this phase, the focus was on finalizing the **Employee Management** and **Designation Management** modules. The **Designation module** includes functionality to manage employee titles and roles, while the **Employee module** manages detailed employee information, such as personal details, designation, salary, and identification numbers.
 
-With this enhancement, the application is now capable of handling both **designation** and **employee** data through the database and provides a more complete HR management system.
+The application integrates these features with a **MySQL database**, allowing users to manage employee and designation data efficiently.
 
 ## ✨ Features
 
-- **CRUD Operations** for both designations and employees.
+- **CRUD Operations** for both **Designations** and **Employees**.
 - **Search** functionality for both designations and employees.
-- **Export to PDF** functionality for employee and designation data using iText7.
-- **Data Persistence** through MySQL database.
-- **Employee Management Module** added with fields like:
-  - ID
+- **Export to PDF** functionality for designation and employee data using **iText7**.
+- **Data Persistence** through **MySQL** database for storing designations and employee data.
+- **Employee Module** includes the following fields:
+  - Employee ID
   - Name
-  - Designation
+  - Designation (Code and Title)
   - Date of Birth
-  - Basic Salary
   - Gender
-  - PAN
-  - Aadhar
+  - Indian Status (isIndian)
+  - Basic Salary
+  - PAN Number
+  - Aadhar Card Number
 
 ## 🏛️ Project Architecture
 
-The architecture has been further expanded to accommodate the new **Employee Management Module**. The updated architecture now includes:
+The architecture has been updated to accommodate the **Employee Management** and **Designation Management** features, with clear separation of concerns between data handling, business logic, and presentation.
 
 - **Data Layer (DL):**  
-  - Handles database interactions for both designations and employee data.
+  - Handles database interactions for both employees and designations.
 
 - **Business Logic Layer (BL):**  
-  - Manages business rules and logic for employee and designation management.
+  - Contains logic for handling business rules related to employee and designation management.
 
 - **Presentation Layer (PL):**  
-  - Provides the graphical user interface for CRUD operations on both designations and employees.
+  - Provides the user interface for performing CRUD operations for employees and designations.
 
 - **Database Data Layer (DBDL):**  
-  - Handles all database interactions using **JDBC** for designations and employee data.
+  - Interacts with the database through **JDBC** to manage employee and designation data.
 
 - **Networking Layers:**  
-  - **NetServer, NetClient, NetCommon, ProxyBL** remain the same, facilitating network communication for CRUD operations over the client-server setup.
+  - **NetServer, NetClient, NetCommon, ProxyBL**: Handles client-server communication for CRUD operations over the network.
 
 ## 🛠️ Technologies Used
 
@@ -52,13 +57,9 @@ The architecture has been further expanded to accommodate the new **Employee Man
 
 ## 🧑‍💻 Development Journey
 
-In this phase, the application was enhanced by implementing the **Employee Management Module**, which included adding employee data fields such as name, designation, gender, and salary. The data is now stored in the **MySQL database**.
+This phase focused on completing the **Designation Management** and **Employee Management** modules. The **Designation module** allows HR managers to define the role titles and associated codes for employees, while the **Employee module** includes essential details like name, employee ID, salary, and PAN.
 
-The **Employee CRUD Operations** were added, enabling users to create, read, update, and delete employee records within the application. Additionally, the **GUI** was updated to accommodate employee management, with new forms and tables to display employee data.
+The **Business Logic Layer (BL)** was updated to manage the CRUD operations for both employees and designations, and the **Presentation Layer (PL)** was enhanced to allow easy interaction with the data, including a new search bar and table views for employees and designations.
 
-The **Database Data Layer (DBDL)** was extended to include employee data management, and the **Business Logic Layer (BL)** was updated to include the logic for handling employee-specific operations.
-
-## 🚀 Next Steps
-
-The next phase will focus on refining the **user interface** and improving the **client-server interaction** to handle more complex operations. We will also work on improving the performance of the system and adding features such as **employee attendance management** and **salary management**.
+The **Database Data Layer (DBDL)** was extended to store both employee and designation information using **JDBC**, while custom networking capabilities were utilized to facilitate client-server communication.
 
