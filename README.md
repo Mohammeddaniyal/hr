@@ -1,7 +1,3 @@
-Got it! Thank you for the clarification. I will update the information to accurately reflect the **Designation** and **Employee** modules only, and will exclude any mention of attendance management. Here's the corrected version:
-
----
-
 # HR Management System (Java Desktop App)
 
 ## 📋 Project Overview
