@@ -2,17 +2,16 @@
 
 ## 📋 Project Overview
 
-In this phase, the focus was on finalizing the **Employee Management** and **Designation Management** modules. The **Designation module** includes functionality to manage employee titles and roles, while the **Employee module** manages detailed employee information, such as personal details, designation, salary, and identification numbers.
+In this phase, the main focus was to complete the **Employee Management Module** by developing the **GUI interface** for managing employee records. This includes adding functionality to allow users to easily create, read, update, and delete employee records through an intuitive user interface.
 
-The application integrates these features with a **MySQL database**, allowing users to manage employee and designation data efficiently.
+No additional modules or features were added during this phase. The primary goal was to refine the **Employee module's GUI** for better usability and user experience.
 
 ## ✨ Features
 
-- **CRUD Operations** for both **Designations** and **Employees**.
-- **Search** functionality for both designations and employees.
-- **Export to PDF** functionality for designation and employee data using **iText7**.
-- **Data Persistence** through **MySQL** database for storing designations and employee data.
-- **Employee Module** includes the following fields:
+- **CRUD Operations** for **Employees** (Create, Read, Update, Delete).
+- **Search** functionality for employees.
+- **Export to PDF** functionality for employee data using **iText7**.
+- **Employee Management** includes the following fields:
   - Employee ID
   - Name
   - Designation (Code and Title)
@@ -25,22 +24,22 @@ The application integrates these features with a **MySQL database**, allowing us
 
 ## 🏛️ Project Architecture
 
-The architecture has been updated to accommodate the **Employee Management** and **Designation Management** features, with clear separation of concerns between data handling, business logic, and presentation.
+The architecture remains the same, with the following structure:
 
 - **Data Layer (DL):**  
-  - Handles database interactions for both employees and designations.
+  - Handles database interactions for employee data.
 
 - **Business Logic Layer (BL):**  
-  - Contains logic for handling business rules related to employee and designation management.
+  - Manages the logic for CRUD operations on employee records.
 
 - **Presentation Layer (PL):**  
-  - Provides the user interface for performing CRUD operations for employees and designations.
+  - The **Employee module's GUI** was developed during this phase to provide a user-friendly interface for managing employee data.
 
 - **Database Data Layer (DBDL):**  
-  - Interacts with the database through **JDBC** to manage employee and designation data.
+  - Stores employee data in the MySQL database using **JDBC**.
 
 - **Networking Layers:**  
-  - **NetServer, NetClient, NetCommon, ProxyBL**: Handles client-server communication for CRUD operations over the network.
+  - **NetServer, NetClient, NetCommon, ProxyBL** continue to handle network communication.
 
 ## 🛠️ Technologies Used
 
@@ -53,9 +52,18 @@ The architecture has been updated to accommodate the **Employee Management** and
 
 ## 🧑‍💻 Development Journey
 
-This phase focused on completing the **Designation Management** and **Employee Management** modules. The **Designation module** allows HR managers to define the role titles and associated codes for employees, while the **Employee module** includes essential details like name, employee ID, salary, and PAN.
+The primary development focus of this phase was to create the **GUI for the Employee module**. The GUI now allows users to perform the following actions:
 
-The **Business Logic Layer (BL)** was updated to manage the CRUD operations for both employees and designations, and the **Presentation Layer (PL)** was enhanced to allow easy interaction with the data, including a new search bar and table views for employees and designations.
+- Add new employee records.
+- Update existing employee information.
+- Delete employee records.
+- Search for employees based on various criteria.
+- Export employee data to PDF for documentation or reporting purposes.
 
-The **Database Data Layer (DBDL)** was extended to store both employee and designation information using **JDBC**, while custom networking capabilities were utilized to facilitate client-server communication.
+The **Presentation Layer (PL)** was updated to include the employee management interface, which consists of forms for input, a table for displaying employee data, and buttons for various actions like **Add**, **Update**, **Delete**, and **Export**.
 
+The **Business Logic Layer (BL)** was also updated to connect the GUI with the underlying **MySQL database**, using **JDBC** to ensure that changes made in the UI are reflected in the database.
+
+## 🚀 Next Steps
+
+The next steps will be to **test the GUI thoroughly** and ensure that all operations perform smoothly, without any bugs or issues. No new modules or features are planned for the time being; the focus will remain on refining the existing functionality and making sure the system is stable and reliable.
