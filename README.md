@@ -1,69 +1,126 @@
 # HR Management System (Java Desktop App)
 
+An employee management desktop application built using Java with a multi-layered architecture, custom networking, and MySQL database integration.
+
 ## 📋 Project Overview
 
-In this phase, the main focus was to complete the **Employee Management Module** by developing the **GUI interface** for managing employee records. This includes adding functionality to allow users to easily create, read, update, and delete employee records through an intuitive user interface.
+This application helps manage employee designations with a user-friendly GUI. It was developed in multiple phases as new technologies were learned, including JDBC and Java Socket Programming.
 
-No additional modules or features were added during this phase. The primary goal was to refine the **Employee module's GUI** for better usability and user experience.
+Initially, data was handled via file storage. Later, it was migrated to a MySQL database with complete client-server communication using custom networking code.
 
 ## ✨ Features
 
-- **CRUD Operations** for **Employees** (Create, Read, Update, Delete).
-- **Search** functionality for employees.
-- **Export to PDF** functionality for employee data using **iText7**.
-- **Employee Management** includes the following fields:
-  - Employee ID
-  - Name
-  - Designation (Code and Title)
-  - Date of Birth
-  - Gender
-  - Indian Status (isIndian)
-  - Basic Salary
-  - PAN Number
-  - Aadhar Card Number
+- GUI for **Designation Module** and **Employee Module**.
+- Perform **CRUD operations** on both designations and employees.
+- **Search** functionality for designations and employees.
+- **Export to PDF** functionality.
+- Data persistence through **MySQL Database**.
+- **Custom client-server communication** using Java Sockets.
+- Multi-layered clean architecture (Separation of concerns).
 
 ## 🏛️ Project Architecture
 
-The architecture remains the same, with the following structure:
+- **DL (Data Layer):**  
+  - Handles file-based storage initially.
+- **BL (Business Logic Layer):**  
+  - Business rules for managing designations and employees.
+- **PL (Presentation Layer):**  
+  - Java Swing GUI for interacting with users.
+- **DBDL (Database Data Layer):**  
+  - JDBC-based database operations (MySQL).
+- **Networking Layer:**  
+  - Custom Socket Programming with:
+    - netserver
+    - netclient
+    - netcommon
+    - proxybl
+    - hrserver
 
-- **Data Layer (DL):**  
-  - Handles database interactions for employee data.
-
-- **Business Logic Layer (BL):**  
-  - Manages the logic for CRUD operations on employee records.
-
-- **Presentation Layer (PL):**  
-  - The **Employee module's GUI** was developed during this phase to provide a user-friendly interface for managing employee data.
-
-- **Database Data Layer (DBDL):**  
-  - Stores employee data in the MySQL database using **JDBC**.
-
-- **Networking Layers:**  
-  - **NetServer, NetClient, NetCommon, ProxyBL** continue to handle network communication.
+> Presentation Layer (PL) → ProxyBL → Business Logic (BL) → Database Layer (DBDL) → MySQL
 
 ## 🛠️ Technologies Used
 
-- **Java SE** (Swing for GUI)
-- **iText7** (for PDF export functionality)
-- **MySQL** (for database integration)
-- **JDBC** (for connecting and performing operations on MySQL)
-- **Custom Networking** (Java socket programming)
-- **File Handling** (for legacy support)
+- **Java SE** (Swing, AWT)
+- **JDBC** (Database Connectivity)
+- **MySQL** (Backend Database)
+- **Java Socket Programming** (Networking)
+- **Libraries:**
+  - Gson (for JSON)
+  - iText7 (for PDF export)
+- **Tools:**
+  - Notepad and Command Line (No IDE used!)
 
-## 🧑‍💻 Development Journey
+## 📂 Repository
 
-The primary development focus of this phase was to create the **GUI for the Employee module**. The GUI now allows users to perform the following actions:
+- [GitHub Repository Link](https://github.com/Mohammeddaniyal/hr)
 
-- Add new employee records.
-- Update existing employee information.
-- Delete employee records.
-- Search for employees based on various criteria.
-- Export employee data to PDF for documentation or reporting purposes.
+## 🎯 Why This Architecture? (Behind the Scenes)
 
-The **Presentation Layer (PL)** was updated to include the employee management interface, which consists of forms for input, a table for displaying employee data, and buttons for various actions like **Add**, **Update**, **Delete**, and **Export**.
+Instead of building a simple direct JDBC GUI application, this project was intentionally developed in **progressive phases**:
 
-The **Business Logic Layer (BL)** was also updated to connect the GUI with the underlying **MySQL database**, using **JDBC** to ensure that changes made in the UI are reflected in the database.
+- **Phase 1:** File handling for understanding basic persistence.
+- **Phase 2:** Database integration with JDBC for real-world storage.
+- **Phase 3:** Custom client-server communication using Java Sockets to simulate enterprise-level distributed systems.
 
-## 🚀 Next Steps
+This approach provided hands-on learning about:
 
-The next steps will be to **test the GUI thoroughly** and ensure that all operations perform smoothly, without any bugs or issues. No new modules or features are planned for the time being; the focus will remain on refining the existing functionality and making sure the system is stable and reliable.
+- Multi-layered architecture
+- Decoupled and scalable system design
+- Real-world networking concepts
+- Database interaction best practices
+
+It may seem redundant at first glance, but this structure reflects a deep learning journey and real-world application development practices.
+
+## 💬 Why Take the Hard Way? (Learning Approach)
+
+- **No IDEs or heavy frameworks were used.**  
+- **No pre-built tools or generators were relied upon.**
+
+Every line of code was manually written using Notepad and executed via Command Line to gain complete understanding and control over:
+
+- How Java programs work internally
+- Manual classpath management
+- Pure fundamentals of networking, file handling, and JDBC
+- Debugging and problem-solving without IDE assistance
+
+This method was chosen intentionally to build **strong core programming skills** instead of relying on shortcuts. It ensures real confidence in handling any scale of project in the future — whether small apps or large distributed systems.
+
+---
+
+## 🚀 Future Updates
+
+- 📸 Add screenshots of GUI
+- 🛠️ Add detailed Setup & Run instructions
+- 🧩 Bundle dependencies (Gson, MySQL Connector, iText7) internally
+- 📜 Add batch files for easier execution
+- 👥 Implement GUI for Employee Module
+
+---
+
+## 🙌 Contributions
+
+This project is a solo learning journey to master real-world application development, software architecture, database management, and networking in Java from scratch.
+
+---
+
+### Employee Properties
+
+The **Employee** module manages the following fields:
+
+- **Employee ID:** Unique identifier for each employee.
+- **Name:** Full name of the employee.
+- **Designation Code:** Code representing the employee's designation.
+- **Date of Birth:** The employee's birthdate.
+- **Gender:** Employee's gender.
+- **Is Indian:** Boolean flag indicating if the employee is Indian.
+- **Basic Salary:** The employee's basic salary (BigDecimal).
+- **PAN Number:** Permanent Account Number for taxation purposes.
+- **Aadhar Card Number:** Aadhar card number for identification.
+
+### Designation Properties
+
+The **Designation** module manages the following fields:
+
+- **Code:** Unique code representing the designation.
+- **Title:** The title of the designation (e.g., "Software Engineer", "HR Manager").
+
